@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pranjal Agrawal — Customer Success Executive at Capillary Technologies. Enterprise SaaS · APAC, US & EU · NPS, Power BI, Salesforce. Bengaluru.">
+<title>Pranjal Agrawal | Customer Success · Capillary Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+:root{
+  /* ATS-friendly green palette */
+  --bg:#080f0b;
+  --bg2:#0c1410;
+  --bg-nav:rgba(8,15,11,0.88);
+  --bg-card:#0f1a12;
+  --bg-card-h:#131f16;
+  --accent:#22c55e;
+  --accent-d:#16a34a;
+  --accent-soft:#4ade80;
+  --accent-glow:rgba(34,197,94,0.15);
+  --accent-border:rgba(34,197,94,0.25);
+  --accent-tag:rgba(34,197,94,0.09);
+  --text:#e8f5ec;
+  --text-sub:#8faa97;
+  --text-dim:#3d5944;
+  --border:rgba(255,255,255,0.06);
+  --border-h:rgba(255,255,255,0.12);
+  --font-body:'Inter',sans-serif;
+  --font-display:'Syne',sans-serif;
+  --nav-h:62px;
+  --max:900px;
+  --r:10px;
+  --r-lg:14px;
+}
+
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── ANIMATED GRID BG ── */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(34,197,94,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(34,197,94,0.03) 1px,transparent 1px);
+  background-size:48px 48px;
+  animation:gridPan 30s linear infinite;
+}
+@keyframes gridPan{to{background-position:48px 48px;}}
+
+/* ── GLOW ORBS ── */
+.orb{
+  position:fixed;border-radius:50%;filter:blur(80px);
+  pointer-events:none;z-index:0;
+  animation:orbFloat 8s ease-in-out infinite alternate;
+}
+.orb1{width:500px;height:500px;background:rgba(34,197,94,0.06);top:-100px;right:-100px;}
+.orb2{width:400px;height:400px;background:rgba(22,163,74,0.05);bottom:-80px;left:-80px;animation-delay:-4s;}
+@keyframes orbFloat{
+  0%{transform:translate(0,0) scale(1);}
+  100%{transform:translate(20px,20px) scale(1.05);}
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;
+  background:var(--bg-nav);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  animation:navDrop .6s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes navDrop{from{transform:translateY(-100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.nav-logo{
+  font-family:var(--font-display);
+  font-weight:800;font-size:1.15rem;letter-spacing:-.03em;
+  position:relative;
+}
+.nav-logo span{color:var(--accent);}
+.nav-logo::after{
+  content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;
+  background:var(--accent);transition:width .35s ease;
+}
+.nav-logo:hover::after{width:100%;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{
+  font-size:.82rem;font-weight:500;letter-spacing:.04em;
+  color:var(--text-sub);position:relative;
+  transition:color .2s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;
+  background:var(--accent);transition:width .25s ease;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  font-size:.8rem;font-weight:600;letter-spacing:.04em;
+  background:var(--accent);color:#061009;
+  padding:.42rem 1.1rem;border-radius:6px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 0 0 0 var(--accent-glow);
+}
+.nav-cta:hover{
+  background:var(--accent-soft);transform:translateY(-1px);
+  box-shadow:0 0 20px 4px var(--accent-glow);
+}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  max-width:var(--max);margin:0 auto;
+  padding:calc(var(--nav-h) + 5rem) 2rem 5rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;
+}
+.hero-eyebrow{
+  display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;
+  animation:fadeUp .7s .2s cubic-bezier(.16,1,.3,1) both;
+}
+.eyebrow-chip{
+  font-size:.72rem;font-weight:500;letter-spacing:.07em;
+  color:var(--text-sub);border:1px solid var(--border);
+  padding:.28rem .75rem;border-radius:20px;
+  transition:border-color .2s,color .2s;
+}
+.eyebrow-chip:hover{border-color:var(--accent-border);color:var(--accent-soft);}
+
+.hero-name{
+  font-family:var(--font-display);
+  font-size:clamp(3.2rem,9vw,6.2rem);
+  font-weight:800;line-height:.95;letter-spacing:-.05em;
+  animation:fadeUp .7s .35s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-name em{font-style:normal;color:var(--accent);position:relative;display:inline-block;}
+.hero-name em::after{
+  content:attr(data-text);
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--accent),var(--accent-soft),var(--accent));
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+@keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+
+.hero-sub{
+  font-size:1rem;color:var(--text-sub);max-width:550px;
+  line-height:1.75;margin-bottom:2rem;margin-top:1.25rem;
+  animation:fadeUp .7s .5s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-chips{
+  display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2.5rem;
+  animation:fadeUp .7s .6s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-chip{
+  font-size:.75rem;font-weight:500;
+  background:var(--accent-tag);color:var(--accent-soft);
+  border:1px solid var(--accent-border);
+  padding:.3rem .8rem;border-radius:20px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.hero-chip:hover{
+  background:rgba(34,197,94,0.16);transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(34,197,94,0.15);
+}
+.hero-btns{
+  display:flex;flex-wrap:wrap;gap:.9rem;
+  animation:fadeUp .7s .7s cubic-bezier(.16,1,.3,1) both;
+}
+.btn-fill{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.85rem;font-weight:700;
+  background:var(--accent);color:#061009;
+  padding:.72rem 1.5rem;border-radius:8px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  position:relative;overflow:hidden;
+}
+.btn-fill::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.2) 50%,transparent 70%);
+  transform:translateX(-100%);transition:transform .5s ease;
+}
+.btn-fill:hover::before{transform:translateX(100%);}
+.btn-fill:hover{background:var(--accent-soft);transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,0.3);}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.85rem;font-weight:500;
+  border:1px solid var(--border);color:var(--text-sub);
+  padding:.72rem 1.5rem;border-radius:8px;
+  transition:border-color .2s,color .2s,transform .15s,background .2s;
+}
+.btn-outline:hover{border-color:var(--accent-border);color:var(--text);transform:translateY(-2px);background:rgba(34,197,94,0.04);}
+
+/* ── STATS ── */
+.stats{
+  display:flex;flex-wrap:wrap;gap:3.5rem;
+  margin-top:4rem;padding-top:3rem;
+  border-top:1px solid var(--border);
+  animation:fadeUp .7s .85s cubic-bezier(.16,1,.3,1) both;
+}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:2.1rem;font-weight:800;letter-spacing:-.04em;
+  display:flex;align-items:baseline;gap:.1rem;
+  color:var(--text);
+}
+.stat-num sup{font-size:1rem;color:var(--accent);}
+.stat-label{font-size:.74rem;color:var(--text-dim);margin-top:.2rem;}
+
+/* ── TYPING CURSOR ── */
+.typed-cursor{
+  display:inline-block;width:2px;height:1em;
+  background:var(--accent);margin-left:2px;
+  animation:blink .7s step-end infinite;
+  vertical-align:text-bottom;
+}
+@keyframes blink{50%{opacity:0;}}
+
+/* ── UNIVERSAL FADE-UP ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ── REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease;}
+.reveal-l.visible{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(28px);transition:opacity .6s ease,transform .6s ease;}
+.reveal-r.visible{opacity:1;transform:translateX(0);}
+
+/* ── SECTIONS ── */
+section{
+  max-width:var(--max);margin:0 auto;
+  padding:5rem 2rem;
+  border-top:1px solid var(--border);
+  position:relative;z-index:1;
+}
+.sec-num{
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:.7rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.sec-num::after{content:'';flex:1;max-width:3rem;height:1px;background:var(--accent-border);}
+.sec-title{
+  font-family:var(--font-display);
+  font-size:1.9rem;font-weight:700;letter-spacing:-.04em;
+  color:var(--text);margin-bottom:2.5rem;
+}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start;}
+.about-bio{font-size:.93rem;color:var(--text-sub);line-height:1.85;}
+.about-bio p{margin-bottom:.9rem;}
+.about-bio strong{color:var(--text);font-weight:500;}
+.meta-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:.9rem 0;border-bottom:1px solid var(--border);gap:1rem;font-size:.83rem;
+  transition:background .2s;
+}
+.meta-row:first-of-type{border-top:1px solid var(--border);}
+.meta-row:hover{background:rgba(34,197,94,0.03);padding-left:.4rem;transition:padding .2s;}
+.mk{color:var(--text-dim);white-space:nowrap;}
+.mv{color:var(--text-sub);text-align:right;}
+.mv a{color:var(--accent-soft);}
+.mv a:hover{text-decoration:underline;}
+.award-pill{
+  display:inline-flex;align-items:center;gap:.35rem;
+  background:rgba(34,197,94,0.09);color:var(--accent-soft);
+  border:1px solid var(--accent-border);
+  padding:.22rem .6rem;border-radius:20px;
+  font-size:.72rem;font-weight:500;margin-top:.35rem;
+  animation:pulse-border 2.5s ease-in-out infinite;
+}
+@keyframes pulse-border{
+  0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
+  50%{box-shadow:0 0 0 4px rgba(34,197,94,0.12);}
+}
+
+/* ── EXPERIENCE ── */
+.exp-list{display:flex;flex-direction:column;gap:1.5rem;}
+.exp-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:1.75rem;
+  position:relative;overflow:hidden;
+  transition:border-color .3s,background .3s,transform .25s,box-shadow .3s;
+}
+.exp-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--accent-glow),transparent 60%);
+  opacity:0;transition:opacity .35s;pointer-events:none;
+}
+.exp-card:hover{
+  border-color:var(--accent-border);background:var(--bg-card-h);
+  transform:translateY(-3px);box-shadow:0 12px 32px rgba(34,197,94,0.08);
+}
+.exp-card:hover::after{opacity:1;}
+.exp-card.current::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-soft),var(--accent));
+  background-size:200%;animation:shimmer 2.5s linear infinite;
+}
+.exp-head{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:1rem;margin-bottom:.3rem;flex-wrap:wrap;
+}
+.exp-role{
+  font-family:var(--font-display);
+  font-size:1.05rem;font-weight:700;color:var(--text);
+}
+.exp-badge{
+  font-size:.67rem;font-weight:700;letter-spacing:.08em;
+  background:rgba(34,197,94,0.12);color:var(--accent-soft);
+  border:1px solid var(--accent-border);
+  padding:.18rem .55rem;border-radius:20px;white-space:nowrap;
+  animation:pulse-border 2s ease-in-out infinite;
+}
+.exp-co{font-size:.82rem;color:var(--accent-soft);font-weight:500;margin-bottom:.18rem;}
+.exp-dates{font-size:.74rem;color:var(--text-dim);margin-bottom:1.2rem;}
+.exp-bullets{display:flex;flex-direction:column;gap:.55rem;}
+.exp-bullets li{
+  font-size:.86rem;color:var(--text-sub);line-height:1.65;
+  padding-left:1rem;position:relative;
+  transition:color .2s;
+}
+.exp-bullets li::before{
+  content:'–';position:absolute;left:0;
+  color:var(--accent);font-weight:600;
+}
+.exp-bullets li:hover{color:var(--text);}
+
+/* ── SKILL BARS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.skill-group{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.25rem;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.skill-group:hover{
+  border-color:var(--accent-border);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(34,197,94,0.08);
+}
+.sg-label{
+  font-size:.68rem;font-weight:700;letter-spacing:.11em;
+  color:var(--text-dim);text-transform:uppercase;margin-bottom:.85rem;
+}
+.sg-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.sg-tag{
+  font-size:.75rem;font-weight:500;
+  background:var(--accent-tag);color:var(--accent-soft);
+  border:1px solid var(--accent-border);
+  padding:.27rem .65rem;border-radius:6px;
+  transition:background .2s,transform .15s;
+}
+.sg-tag:hover{background:rgba(34,197,94,0.18);transform:scale(1.05);}
+
+/* ── PROGRESS BARS (ATS keywords) ── */
+.ats-section{margin-top:2.5rem;}
+.ats-title{
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;
+  color:var(--text-dim);text-transform:uppercase;margin-bottom:1.2rem;
+}
+.ats-bar{margin-bottom:1rem;}
+.ats-bar-label{
+  display:flex;justify-content:space-between;
+  font-size:.8rem;color:var(--text-sub);margin-bottom:.4rem;
+}
+.ats-bar-label span{color:var(--accent-soft);font-weight:600;}
+.ats-track{
+  height:5px;background:rgba(255,255,255,0.06);border-radius:99px;overflow:hidden;
+}
+.ats-fill{
+  height:100%;border-radius:99px;width:0;
+  background:linear-gradient(90deg,var(--accent-d),var(--accent-soft));
+  transition:width 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+/* ── LINKEDIN ── */
+.li-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:2rem;
+  transition:border-color .25s;
+}
+.li-card:hover{border-color:var(--accent-border);}
+.li-card p{font-size:.9rem;color:var(--text-sub);line-height:1.8;margin-bottom:1.5rem;}
+.li-list{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.75rem;}
+.li-list li{
+  font-size:.84rem;color:var(--text-sub);
+  padding-left:1rem;position:relative;
+  transition:color .2s,transform .2s;
+}
+.li-list li::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:1.3rem;line-height:.9;}
+.li-list li:hover{color:var(--text);transform:translateX(4px);}
+.li-btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-size:.84rem;font-weight:600;
+  background:#0A66C2;color:#fff;
+  padding:.68rem 1.35rem;border-radius:8px;
+  transition:opacity .2s,transform .15s,box-shadow .2s;
+}
+.li-btn:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,102,194,0.3);}
+
+/* ── EDU / AWARDS ── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.edu-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.5rem;
+  transition:border-color .25s,transform .25s;
+}
+.edu-card:hover{border-color:var(--accent-border);transform:translateY(-3px);}
+.edu-dates{font-size:.72rem;color:var(--text-dim);margin-bottom:.55rem;}
+.edu-title{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.25rem;}
+.edu-sub{font-size:.8rem;color:var(--text-sub);margin-bottom:.2rem;}
+.edu-loc{font-size:.74rem;color:var(--text-dim);}
+.award-card{
+  background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(22,163,74,0.03));
+  border:1px solid var(--accent-border);border-radius:var(--r);padding:1.5rem;
+  transition:transform .25s,box-shadow .25s;
+}
+.award-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(34,197,94,0.1);}
+.award-icon{font-size:1.4rem;margin-bottom:.7rem;animation:spin 3s ease-in-out infinite alternate;}
+@keyframes spin{0%{transform:rotate(-8deg) scale(1);}100%{transform:rotate(8deg) scale(1.1);}}
+.award-title{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.22rem;}
+.award-org{font-size:.8rem;color:var(--accent-soft);margin-bottom:.5rem;}
+.award-desc{font-size:.8rem;color:var(--text-sub);line-height:1.65;}
+
+/* ── CONTACT ── */
+.contact-top{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.contact-link{
+  display:flex;flex-direction:column;gap:.28rem;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.2rem;
+  transition:border-color .25s,transform .2s,background .2s;
+}
+.contact-link:hover{border-color:var(--accent-border);transform:translateY(-2px);background:var(--bg-card-h);}
+.cl-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+.cl-val{font-size:.88rem;color:var(--text);font-weight:500;}
+.contact-loc{
+  display:flex;align-items:center;gap:.8rem;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.2rem;
+  font-size:.86rem;color:var(--text-sub);
+}
+.loc-dot{
+  width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0;
+  box-shadow:0 0 0 0 rgba(34,197,94,0.5);
+  animation:ping 1.5s ease-out infinite;
+}
+@keyframes ping{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5);}
+  100%{box-shadow:0 0 0 10px rgba(34,197,94,0);}
+}
+
+/* ── SCROLL PROGRESS BAR ── */
+#progress-bar{
+  position:fixed;top:0;left:0;height:2px;width:0%;z-index:300;
+  background:linear-gradient(90deg,var(--accent-d),var(--accent-soft));
+  transition:width .1s linear;
+}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:2rem;
+  border-top:1px solid var(--border);
+  font-size:.75rem;color:var(--text-dim);
+  position:relative;z-index:1;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:660px){
+  .nav-links{display:none;}
+  .about-grid,.edu-grid,.contact-top{grid-template-columns:1fr;}
+  .hero-name{font-size:3.2rem;}
+  .stats{gap:2rem;}
+  nav,section,#hero{padding-left:1.25rem;padding-right:1.25rem;}
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Pranjal<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#linkedin">LinkedIn</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/impranjal11" target="_blank" rel="noopener" class="nav-cta">Connect</a>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-chip">Enterprise SaaS</span>
+    <span class="eyebrow-chip">APAC</span>
+    <span class="eyebrow-chip">US</span>
+    <span class="eyebrow-chip">EU</span>
+  </div>
+  <h1 class="hero-name">Pranjal<br><em data-text="Agrawal">Agrawal</em></h1>
+  <p class="hero-sub">
+    Customer Success Executive at <strong>Capillary Technologies</strong> — managing enterprise client relationships,
+    end-to-end NPS ownership, overage management, and customer health dashboards across global geographies.
+  </p>
+  <div class="hero-chips">
+    <span class="hero-chip">NPS Ownership</span>
+    <span class="hero-chip">Power BI</span>
+    <span class="hero-chip">Salesforce CRM</span>
+    <span class="hero-chip">Totango</span>
+    <span class="hero-chip">Cognisaas</span>
+    <span class="hero-chip">Overage Management</span>
+    <span class="hero-chip">Dashboard Development</span>
+    <span class="hero-chip">Customer Retention</span>
+  </div>
+  <div class="hero-btns">
+    <a href="#experience" class="btn-fill">Explore experience</a>
+    <a href="mailto:pranjalagrawal1102@gmail.com" class="btn-outline">Email me</a>
+  </div>
+  <div class="stats">
+    <div>
+      <div class="stat-num"><span class="count" data-target="3">0</span><sup>+</sup></div>
+      <div class="stat-label">Global regions</div>
+    </div>
+    <div>
+      <div class="stat-num"><span class="count" data-target="12">0</span><sup>+</sup></div>
+      <div class="stat-label">Core skills</div>
+    </div>
+    <div>
+      <div class="stat-num"><span class="count" data-target="2">0</span><sup>+</sup></div>
+      <div class="stat-label">Years experience</div>
+    </div>
+    <div>
+      <div class="stat-num">2025</div>
+      <div class="stat-label">Best Debut Award</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-num reveal">01</div>
+  <h2 class="sec-title reveal">About me</h2>
+  <div class="about-grid">
+    <div class="about-bio reveal-l">
+      <p>Customer Success Executive with <strong>2+ years of experience</strong> supporting enterprise SaaS customers across APAC, US, and EU markets.</p>
+      <p>Experienced in <strong>customer retention, NPS program management, stakeholder engagement, business reporting, customer success operations, and overage management</strong>.</p>
+      <p>Skilled in Salesforce, Power BI, Totango, Cognisaas, Excel, and data-driven decision making. Built executive dashboards, managed global NPS processes, collaborated with Legal and Finance teams on overage calculations.</p>
+      <p>Improved customer visibility through <strong>reporting automation and cross-functional collaboration</strong>. Recipient of the Best Debut Award (2025) at Capillary Technologies.</p>
+    </div>
+    <div class="about-meta reveal-r">
+      <div class="meta-row"><span class="mk">Current role</span><span class="mv">Executive – CS @ Capillary</span></div>
+      <div class="meta-row"><span class="mk">Education</span><span class="mv">MBA Integrated · 2019–2024</span></div>
+      <div class="meta-row"><span class="mk">LinkedIn</span><span class="mv"><a href="https://www.linkedin.com/in/impranjal11" target="_blank" rel="noopener">impranjal11</a></span></div>
+      <div class="meta-row"><span class="mk">Email</span><span class="mv"><a href="mailto:pranjalagrawal1102@gmail.com">pranjalagrawal1102@gmail.com</a></span></div>
+      <div class="meta-row"><span class="mk">Phone</span><span class="mv"><a href="tel:+919111222148">+91 9111 222 148</a></span></div>
+      <div class="meta-row" style="border-bottom:none;flex-direction:column;gap:.4rem;">
+        <span class="mk">Recognition</span>
+        <span class="award-pill">🏆 Best Debut Award · Nov 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-num reveal">02</div>
+  <h2 class="sec-title reveal">Work experience</h2>
+  <div class="exp-list">
+    <div class="exp-card current reveal">
+      <div class="exp-head">
+        <span class="exp-role">Executive – Customer Success</span>
+        <span class="exp-badge">Current</span>
+      </div>
+      <div class="exp-co">Capillary Technologies · Bengaluru, Karnataka</div>
+      <div class="exp-dates">Aug 2024 — Present</div>
+      <ul class="exp-bullets">
+        <li>Managed enterprise customer relationships across APAC and Malaysia accounts, supporting BAU operations and ongoing customer success initiatives</li>
+        <li>Owned and executed the end-to-end NPS program across Asia, US, and EU regions — driving customer sentiment analysis and leadership reporting</li>
+        <li>Designed and maintained a centralised Customer Success Dashboard tracking NPS, revenue performance, overage metrics, support tickets, and customer engagement for leadership visibility</li>
+        <li>Collaborated with Legal and Finance teams on overage calculations, ensuring accuracy and alignment across customer contracts</li>
+        <li>Developed Power BI dashboards to monitor sales performance, customer registrations, and operational KPIs using dynamic filters and automated reporting views</li>
+        <li>Improved account visibility and opportunity tracking through Salesforce CRM, supporting customer success and revenue growth initiatives</li>
+        <li>Partnered with Customer Success, Product, Support, and Delivery teams to resolve customer issues and improve overall customer experience</li>
+        <li>Led project tracking and operational reporting through Cognisaas, enabling visibility into execution timelines and team productivity</li>
+        <li>Analysed customer engagement and success metrics using Totango to identify trends, risks, and improvement opportunities</li>
+        <li>Awarded Best Debut Award (Nov 2025) for exceptional performance and contribution within the Customer Success organisation</li>
+      </ul>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-head"><span class="exp-role">Intern – Customer Success</span></div>
+      <div class="exp-co">Capillary Technologies · Bengaluru, Karnataka</div>
+      <div class="exp-dates">Feb 2024 — Aug 2024</div>
+      <ul class="exp-bullets">
+        <li>Supported Customer Success Managers in managing enterprise customer accounts across APAC markets</li>
+        <li>Created reports and dashboards to analyse customer feedback, product adoption, and engagement trends</li>
+        <li>Assisted in customer satisfaction initiatives and NPS operations, contributing to customer retention efforts</li>
+        <li>Collaborated with internal teams to resolve customer issues and improve service delivery processes</li>
+        <li>Utilised Totango for customer health monitoring, engagement tracking, and success performance analysis</li>
+      </ul>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-head"><span class="exp-role">Virtual Assistant</span></div>
+      <div class="exp-co">Fittest Agency</div>
+      <div class="exp-dates">May 2023 — Jun 2023</div>
+      <ul class="exp-bullets">
+        <li>Provided administrative and operational support for a fitness coaching business</li>
+      </ul>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-head"><span class="exp-role">Public Relations Manager</span></div>
+      <div class="exp-co">Cine Step Management Pvt. Ltd · Nagpur, Maharashtra</div>
+      <div class="exp-dates">Nov 2022 — Dec 2022</div>
+      <ul class="exp-bullets">
+        <li>Conducted market research and coordinated promotional campaign activities</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-num reveal">03</div>
+  <h2 class="sec-title reveal">Skills &amp; expertise</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <div class="sg-label">Customer Success</div>
+      <div class="sg-tags">
+        <span class="sg-tag">Customer Success Management</span>
+        <span class="sg-tag">Enterprise Account Management</span>
+        <span class="sg-tag">NPS Program Management</span>
+        <span class="sg-tag">Customer Retention</span>
+        <span class="sg-tag">Overage Management</span>
+        <span class="sg-tag">SaaS Client Management</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="sg-label">CRM & Platforms</div>
+      <div class="sg-tags">
+        <span class="sg-tag">Salesforce CRM</span>
+        <span class="sg-tag">Totango</span>
+        <span class="sg-tag">Cognisaas</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="sg-label">Data & Reporting</div>
+      <div class="sg-tags">
+        <span class="sg-tag">Power BI</span>
+        <span class="sg-tag">Dashboard Development</span>
+        <span class="sg-tag">Data Analysis</span>
+        <span class="sg-tag">MS Excel</span>
+        <span class="sg-tag">Google Sheets</span>
+        <span class="sg-tag">Data Visualization</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="sg-label">Collaboration</div>
+      <div class="sg-tags">
+        <span class="sg-tag">Stakeholder Management</span>
+        <span class="sg-tag">Cross-functional Collaboration</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATS KEYWORD PROFICIENCY -->
+  <div class="ats-section reveal">
+    <div class="ats-title">ATS Keyword Proficiency</div>
+    <div class="ats-bar"><div class="ats-bar-label"><span>Customer Success Management</span><span>95%</span></div><div class="ats-track"><div class="ats-fill" data-w="95"></div></div></div>
+    <div class="ats-bar"><div class="ats-bar-label"><span>NPS Program Management</span><span>92%</span></div><div class="ats-track"><div class="ats-fill" data-w="92"></div></div></div>
+    <div class="ats-bar"><div class="ats-bar-label"><span>Salesforce CRM</span><span>88%</span></div><div class="ats-track"><div class="ats-fill" data-w="88"></div></div></div>
+    <div class="ats-bar"><div class="ats-bar-label"><span>Power BI / Dashboarding</span><span>85%</span></div><div class="ats-track"><div class="ats-fill" data-w="85"></div></div></div>
+    <div class="ats-bar"><div class="ats-bar-label"><span>Stakeholder Management</span><span>90%</span></div><div class="ats-track"><div class="ats-fill" data-w="90"></div></div></div>
+    <div class="ats-bar"><div class="ats-bar-label"><span>Cross-functional Collaboration</span><span>87%</span></div><div class="ats-track"><div class="ats-fill" data-w="87"></div></div></div>
+  </div>
+</section>
+
+<!-- LINKEDIN -->
+<section id="linkedin">
+  <div class="sec-num reveal">04</div>
+  <h2 class="sec-title reveal">Connect on LinkedIn</h2>
+  <div class="li-card reveal">
+    <p>Connect for Customer Success, enterprise SaaS, and data-driven client management conversations. Based in Bengaluru — open to roles and collaborations in CS, analytics, and retention.</p>
+    <ul class="li-list">
+      <li>Executive – Customer Success · Capillary Technologies</li>
+      <li>APAC, US &amp; EU enterprise client management</li>
+      <li>MBA Integrated · Shri Ramdeobaba College, Nagpur</li>
+      <li>Best Debut Award — November 2025</li>
+    </ul>
+    <a href="https://www.linkedin.com/in/impranjal11" target="_blank" rel="noopener" class="li-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      Open LinkedIn Profile
+    </a>
+  </div>
+</section>
+
+<!-- EDUCATION & AWARDS -->
+<section id="education">
+  <div class="sec-num reveal">05</div>
+  <h2 class="sec-title reveal">Education &amp; awards</h2>
+  <div class="edu-grid reveal">
+    <div class="edu-card">
+      <div class="edu-dates">Jul 2019 — May 2024</div>
+      <div class="edu-title">MBA (Integrated)</div>
+      <div class="edu-sub">Business Analytics &amp; Marketing</div>
+      <div class="edu-sub">Shri Ramdeobaba College of Engineering &amp; Management</div>
+      <div class="edu-loc">Nagpur, Maharashtra</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div class="award-title">Best Debut Award</div>
+      <div class="award-org">Capillary Technologies · November 2025</div>
+      <div class="award-desc">Recognised for exceptional performance and impactful contribution during the first year within Customer Success.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-num reveal">06</div>
+  <h2 class="sec-title reveal">Let's connect</h2>
+  <div class="contact-top reveal">
+    <a href="https://www.linkedin.com/in/impranjal11" target="_blank" rel="noopener" class="contact-link">
+      <span class="cl-label">LinkedIn</span>
+      <span class="cl-val">in/impranjal11</span>
+    </a>
+    <a href="mailto:pranjalagrawal1102@gmail.com" class="contact-link">
+      <span class="cl-label">Email</span>
+      <span class="cl-val">pranjalagrawal1102@gmail.com</span>
+    </a>
+    <a href="tel:+919111222148" class="contact-link">
+      <span class="cl-label">Phone</span>
+      <span class="cl-val">+91 9111 222 148</span>
+    </a>
+    <div class="contact-loc">
+      <div class="loc-dot"></div>
+      <div>
+        <div style="font-weight:500;color:var(--text);font-size:.88rem;">Bengaluru, Karnataka</div>
+        <div style="font-size:.74rem;margin-top:.1rem;">India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Pranjal Agrawal · Customer Success Executive</footer>
+
+<script>
+/* ── SCROLL PROGRESS ── */
+const bar=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+/* ── COUNT-UP ── */
+function countUp(el){
+  const t=+el.dataset.target,dur=1600;
+  let start=null;
+  (function tick(ts){
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1);
+    el.textContent=Math.round((1-Math.pow(1-p,3))*t);
+    if(p<1)requestAnimationFrame(tick);
+  })(performance.now());
+}
+
+/* ── ATS BARS ── */
+function animateBars(container){
+  container.querySelectorAll('.ats-fill').forEach(el=>{
+    el.style.width=el.dataset.w+'%';
+  });
+}
+
+/* ── INTERSECTION OBSERVER ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const t=e.target;
+    t.classList.add('visible');
+    if(t.classList.contains('ats-section'))animateBars(t);
+    io.unobserve(t);
+  });
+},{threshold:.1});
+
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){countUp(e.target);co.unobserve(e.target);}});
+},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>co.observe(el));
+
+/* ── NAV ACTIVE ── */
+const navLinks=document.querySelectorAll('.nav-links a');
+const secs=[...document.querySelectorAll('section[id]'),document.getElementById('hero')];
+const so=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>{
+        a.style.color=a.getAttribute('href')==='#'+e.target.id?'var(--accent-soft)':'';
+      });
+    }
+  });
+},{threshold:.4});
+secs.forEach(s=>s&&so.observe(s));
+</script>
+</body>
+</html>
