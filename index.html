@@ -21,22 +21,22 @@ ul{list-style:none}
 
 :root{
   /* ATS-friendly green palette */
-  --bg:#080f0b;
-  --bg2:#0c1410;
-  --bg-nav:rgba(8,15,11,0.88);
-  --bg-card:#0f1a12;
-  --bg-card-h:#131f16;
+  --bg:#0a130e;
+  --bg2:#0e1812;
+  --bg-nav:rgba(10,19,14,0.88);
+  --bg-card:#132018;
+  --bg-card-h:#18281e;
   --accent:#22c55e;
   --accent-d:#16a34a;
   --accent-soft:#4ade80;
   --accent-glow:rgba(34,197,94,0.15);
   --accent-border:rgba(34,197,94,0.25);
   --accent-tag:rgba(34,197,94,0.09);
-  --text:#e8f5ec;
-  --text-sub:#8faa97;
-  --text-dim:#3d5944;
-  --border:rgba(255,255,255,0.06);
-  --border-h:rgba(255,255,255,0.12);
+  --text:#f0faf3;
+  --text-sub:#b3cbbb;
+  --text-dim:#7d9c86;
+  --border:rgba(255,255,255,0.08);
+  --border-h:rgba(255,255,255,0.14);
   --font-body:'Inter',sans-serif;
   --font-display:'Syne',sans-serif;
   --nav-h:62px;
@@ -380,27 +380,6 @@ section{
 }
 .sg-tag:hover{background:rgba(34,197,94,0.18);transform:scale(1.05);}
 
-/* ── PROGRESS BARS (ATS keywords) ── */
-.ats-section{margin-top:2.5rem;}
-.ats-title{
-  font-size:.78rem;font-weight:700;letter-spacing:.1em;
-  color:var(--text-dim);text-transform:uppercase;margin-bottom:1.2rem;
-}
-.ats-bar{margin-bottom:1rem;}
-.ats-bar-label{
-  display:flex;justify-content:space-between;
-  font-size:.8rem;color:var(--text-sub);margin-bottom:.4rem;
-}
-.ats-bar-label span{color:var(--accent-soft);font-weight:600;}
-.ats-track{
-  height:5px;background:rgba(255,255,255,0.06);border-radius:99px;overflow:hidden;
-}
-.ats-fill{
-  height:100%;border-radius:99px;width:0;
-  background:linear-gradient(90deg,var(--accent-d),var(--accent-soft));
-  transition:width 1.2s cubic-bezier(.16,1,.3,1);
-}
-
 /* ── LINKEDIN ── */
 .li-card{
   background:var(--bg-card);border:1px solid var(--border);
@@ -523,6 +502,7 @@ gtag('config', 'G-Y5CQPDH46L');
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#linkedin">LinkedIn</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -542,6 +522,7 @@ gtag('config', 'G-Y5CQPDH46L');
   <p class="hero-sub">
     Customer Success Executive at <strong>Capillary Technologies</strong> — managing enterprise client relationships,
     end-to-end NPS ownership, overage management, and customer health dashboards across global geographies.
+    I also manage Capillary's <strong>Global CS Tool</strong>, used by 100+ users from CXOs to CS teams.
   </p>
   <div class="hero-chips">
     <span class="hero-chip">NPS Ownership</span>
@@ -552,6 +533,8 @@ gtag('config', 'G-Y5CQPDH46L');
     <span class="hero-chip">Overage Management</span>
     <span class="hero-chip">Dashboard Development</span>
     <span class="hero-chip">Customer Retention</span>
+    <span class="hero-chip">Escalation Management</span>
+    <span class="hero-chip">Claude Code</span>
   </div>
   <div class="hero-btns">
     <a href="#experience" class="btn-fill">Explore experience</a>
@@ -563,8 +546,8 @@ gtag('config', 'G-Y5CQPDH46L');
       <div class="stat-label">Global regions</div>
     </div>
     <div>
-      <div class="stat-num"><span class="count" data-target="12">0</span><sup>+</sup></div>
-      <div class="stat-label">Core skills</div>
+      <div class="stat-num"><span class="count" data-target="100">0</span><sup>+</sup></div>
+      <div class="stat-label">CS Tool users</div>
     </div>
     <div>
       <div class="stat-num"><span class="count" data-target="2">0</span><sup>+</sup></div>
@@ -585,8 +568,8 @@ gtag('config', 'G-Y5CQPDH46L');
     <div class="about-bio reveal-l">
       <p>Customer Success Executive with <strong>2+ years of experience</strong> supporting enterprise SaaS customers across APAC, US, and EU markets.</p>
       <p>Experienced in <strong>customer retention, NPS program management, stakeholder engagement, business reporting, customer success operations, and overage management</strong>.</p>
-      <p>Skilled in Salesforce, Power BI, Totango, Cognisaas, Excel, and data-driven decision making. Built executive dashboards, managed global NPS processes, collaborated with Legal and Finance teams on overage calculations.</p>
-      <p>Improved customer visibility through <strong>reporting automation and cross-functional collaboration</strong>. Recipient of the Best Debut Award (2025) at Capillary Technologies.</p>
+      <p>Skilled in Salesforce, Power BI, Totango, Cognisaas, and Excel. Run the global NPS program, build executive dashboards, and manage overages with Legal and Finance teams.</p>
+      <p>Manage enhancements and day-to-day operations of Capillary's <strong>Global CS Tool</strong>, used by 100+ users from CXO-level leadership to CS teams, using AI tools such as Claude Code. Recipient of the Best Debut Award (2025) at Capillary Technologies.</p>
     </div>
     <div class="about-meta reveal-r">
       <div class="meta-row"><span class="mk">Current role</span><span class="mv">Executive – CS @ Capillary</span></div>
@@ -621,16 +604,14 @@ gtag('config', 'G-Y5CQPDH46L');
       </div>
       <div class="exp-dates">Aug 2024 — Present</div>
       <ul class="exp-bullets">
-        <li>Managed enterprise customer relationships across APAC and Malaysia accounts, supporting BAU operations and ongoing customer success initiatives</li>
-        <li>Owned and executed the end-to-end NPS program across Asia, US, and EU regions — driving customer sentiment analysis and leadership reporting</li>
-        <li>Designed and maintained a centralised Customer Success Dashboard tracking NPS, revenue performance, overage metrics, support tickets, and customer engagement for leadership visibility</li>
-        <li>Collaborated with Legal and Finance teams on overage calculations, ensuring accuracy and alignment across customer contracts</li>
-        <li>Developed Power BI dashboards to monitor sales performance, customer registrations, and operational KPIs using dynamic filters and automated reporting views</li>
-        <li>Improved account visibility and opportunity tracking through Salesforce CRM, supporting customer success and revenue growth initiatives</li>
-        <li>Partnered with Customer Success, Product, Support, and Delivery teams to resolve customer issues and improve overall customer experience</li>
-        <li>Led project tracking and operational reporting through Cognisaas, enabling visibility into execution timelines and team productivity</li>
-        <li>Analysed customer engagement and success metrics using Totango to identify trends, risks, and improvement opportunities</li>
-        <li>Awarded Best Debut Award (Nov 2025) for exceptional performance and contribution within the Customer Success organisation</li>
+        <li>Manage enterprise customer relationships across APAC accounts, supporting business-as-usual operations and customer success initiatives</li>
+        <li>Own and execute the Net Promoter Score (NPS) program across APAC, US, and EU regions, driving customer sentiment analysis and leadership reporting</li>
+        <li>Design and maintain the Customer Success Dashboard and Power BI dashboards tracking NPS, revenue, overage, support tickets, customer engagement, sales performance, and operational KPIs, used globally from CXO-level leadership to CS teams</li>
+        <li>Collaborate with Legal and Finance teams on overage calculations, ensuring accuracy and alignment across customer contracts</li>
+        <li>Track accounts and opportunities in Salesforce CRM and analyse customer engagement in Totango to identify trends, risks, and improvement opportunities</li>
+        <li>Manage customer escalations by coordinating with Product, Support, and Delivery teams to resolve issues and improve customer experience</li>
+        <li>Lead project tracking and operational reporting through Cognisaas, improving visibility into execution timelines and team productivity</li>
+        <li>Manage enhancements and operations of Capillary's Global CS Tool, used by 100+ users globally from CXO-level leadership to CS teams: gather requirements, drive feature additions, fix bugs, run releases, and integrate data from multiple tools for better visibility and less switching between tabs</li>
       </ul>
     </div>
     <div class="exp-card reveal">
@@ -653,7 +634,7 @@ gtag('config', 'G-Y5CQPDH46L');
     </div>
     <div class="exp-card reveal">
       <div class="exp-head"><span class="exp-role">Virtual Assistant</span></div>
-      <div class="exp-co">Fittest Agency</div>
+      <div class="exp-co">Fittest Agency · Remote</div>
       <div class="exp-dates">May 2023 — Jun 2023</div>
       <ul class="exp-bullets">
         <li>Provided administrative and operational support for a fitness coaching business</li>
@@ -670,9 +651,30 @@ gtag('config', 'G-Y5CQPDH46L');
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-num reveal">03</div>
+  <h2 class="sec-title reveal">Projects</h2>
+  <div class="exp-list">
+    <div class="exp-card current reveal">
+      <div class="exp-head">
+        <span class="exp-role">Global CS Tool</span>
+        <span class="exp-badge">Ongoing</span>
+      </div>
+      <div class="exp-co">Capillary Technologies</div>
+      <div class="exp-dates">Jun 2026 — Present</div>
+      <ul class="exp-bullets">
+        <li>Internal Customer Success platform giving 100+ users, from CXOs to CS teams, one global view of account health, NPS, renewals, revenue, pipeline, and executive reporting</li>
+        <li>Own its enhancements, bug fixes, and operations using AI tools such as Claude Code</li>
+        <li>Currently bringing data from multiple tools into the platform, giving teams better visibility and less switching between tabs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
-  <div class="sec-num reveal">03</div>
+  <div class="sec-num reveal">04</div>
   <h2 class="sec-title reveal">Skills &amp; expertise</h2>
   <div class="skills-grid reveal">
     <div class="skill-group">
@@ -684,6 +686,7 @@ gtag('config', 'G-Y5CQPDH46L');
         <span class="sg-tag">Customer Retention</span>
         <span class="sg-tag">Overage Management</span>
         <span class="sg-tag">SaaS Client Management</span>
+        <span class="sg-tag">Escalation Management</span>
       </div>
     </div>
     <div class="skill-group">
@@ -692,6 +695,17 @@ gtag('config', 'G-Y5CQPDH46L');
         <span class="sg-tag">Salesforce CRM</span>
         <span class="sg-tag">Totango</span>
         <span class="sg-tag">Cognisaas</span>
+        <span class="sg-tag">Claude Code</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="sg-label">Operations</div>
+      <div class="sg-tags">
+        <span class="sg-tag">Internal Tool Management</span>
+        <span class="sg-tag">AI-Assisted Tool Development</span>
+        <span class="sg-tag">Requirement Gathering</span>
+        <span class="sg-tag">User Acceptance Testing (UAT)</span>
+        <span class="sg-tag">Process Improvement</span>
       </div>
     </div>
     <div class="skill-group">
@@ -713,28 +727,18 @@ gtag('config', 'G-Y5CQPDH46L');
       </div>
     </div>
   </div>
-
-  <!-- ATS KEYWORD PROFICIENCY -->
-  <div class="ats-section reveal">
-    <div class="ats-title">ATS Keyword Proficiency</div>
-    <div class="ats-bar"><div class="ats-bar-label"><span>Customer Success Management</span><span>95%</span></div><div class="ats-track"><div class="ats-fill" data-w="95"></div></div></div>
-    <div class="ats-bar"><div class="ats-bar-label"><span>NPS Program Management</span><span>92%</span></div><div class="ats-track"><div class="ats-fill" data-w="92"></div></div></div>
-    <div class="ats-bar"><div class="ats-bar-label"><span>Salesforce CRM</span><span>88%</span></div><div class="ats-track"><div class="ats-fill" data-w="88"></div></div></div>
-    <div class="ats-bar"><div class="ats-bar-label"><span>Power BI / Dashboarding</span><span>85%</span></div><div class="ats-track"><div class="ats-fill" data-w="85"></div></div></div>
-    <div class="ats-bar"><div class="ats-bar-label"><span>Stakeholder Management</span><span>90%</span></div><div class="ats-track"><div class="ats-fill" data-w="90"></div></div></div>
-    <div class="ats-bar"><div class="ats-bar-label"><span>Cross-functional Collaboration</span><span>87%</span></div><div class="ats-track"><div class="ats-fill" data-w="87"></div></div></div>
-  </div>
 </section>
 
 <!-- LINKEDIN -->
 <section id="linkedin">
-  <div class="sec-num reveal">04</div>
+  <div class="sec-num reveal">05</div>
   <h2 class="sec-title reveal">Connect on LinkedIn</h2>
   <div class="li-card reveal">
     <p>Connect for Customer Success, enterprise SaaS, and data-driven client management conversations. Based in Bengaluru — open to roles and collaborations in CS, analytics, and retention.</p>
     <ul class="li-list">
       <li>Executive – Customer Success · Capillary Technologies</li>
       <li>APAC, US &amp; EU enterprise client management</li>
+      <li>Manage the Global CS Tool for 100+ CXO and CS users</li>
       <li>MBA Integrated · Shri Ramdeobaba College, Nagpur</li>
       <li>Best Debut Award — November 2025</li>
     </ul>
@@ -747,7 +751,7 @@ gtag('config', 'G-Y5CQPDH46L');
 
 <!-- EDUCATION & AWARDS -->
 <section id="education">
-  <div class="sec-num reveal">05</div>
+  <div class="sec-num reveal">06</div>
   <h2 class="sec-title reveal">Education &amp; awards</h2>
   <div class="edu-grid reveal">
     <div class="edu-card">
@@ -768,7 +772,7 @@ gtag('config', 'G-Y5CQPDH46L');
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="sec-num reveal">06</div>
+  <div class="sec-num reveal">07</div>
   <h2 class="sec-title reveal">Let's connect</h2>
   <div class="contact-top reveal">
     <a href="https://www.linkedin.com/in/impranjal11" target="_blank" rel="noopener" class="contact-link">
@@ -815,20 +819,12 @@ function countUp(el){
   })(performance.now());
 }
 
-/* ── ATS BARS ── */
-function animateBars(container){
-  container.querySelectorAll('.ats-fill').forEach(el=>{
-    el.style.width=el.dataset.w+'%';
-  });
-}
-
 /* ── INTERSECTION OBSERVER ── */
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(!e.isIntersecting)return;
     const t=e.target;
     t.classList.add('visible');
-    if(t.classList.contains('ats-section'))animateBars(t);
     io.unobserve(t);
   });
 },{threshold:.1});
